@@ -1,3 +1,58 @@
+// Responsive Typography
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+h1, h2, h3 {
+  font-size: 2rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+
+// Flexible Grid Layout
+.section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+}
+
+// Responsive Images
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .movie .image img {
+    width: 100%; // full width on smaller screens
+  }
+}
+
+
+
 // Colors
 
 $black: #393939;

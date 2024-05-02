@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :users
   
   root "movies#index"
   
   resources :movies do
     resources :reviews
   end
+
+  get "signup" => "users#new"
   
   # get "up" => "rails/health#show", as: :rails_health_check
   # get "movies" => "movies#index"
