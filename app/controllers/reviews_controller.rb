@@ -3,6 +3,10 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews = @movie.reviews
+    respond_to do |format|
+      format.html
+      format.json { render json: @reviews }
+    end
   end
 
   def new
@@ -12,9 +16,15 @@ class ReviewsController < ApplicationController
   def create
     @review = @movie.reviews.new(review_params)
     if @review.save
-      redirect_to movie_reviews_path(@movie), notice: "Thanks for your review!"
+      respond_to do |format|
+        format.html { redirect_to movie_reviews_path(@movie), notice: "Thanks for your review!" }
+        format.json { render json: @review, status: :created, location: @review }
+      end
     else
-      render :new, status: :unprocessable_entity
+      respond_to do |format|
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @review.errors, status: :unprocessable_entity }
+      end
     end
   end
 
