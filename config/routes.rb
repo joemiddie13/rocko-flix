@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   get "signup" => "users#new"
+
+  resource :session, only: [:new, :create, :destroy]
+  get "signin" => "sessions#new"
   
   # get "up" => "rails/health#show", as: :rails_health_check
   # get "movies" => "movies#index"
