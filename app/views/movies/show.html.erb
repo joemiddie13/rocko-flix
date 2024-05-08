@@ -18,15 +18,15 @@
     </p>
     <table role="table">
       <tr role="row">
-        <th role="columnheader">Director:</th>
+        <th role="director columnheader">Director:</th>
         <td role="cell"><%= @movie.director %></td>
       </tr>
        <tr>
-        <th role="columnheader">Duration:</th>
+        <th role="movie duration columnheader">Duration:</th>
         <td><%= @movie.duration %></td>
       </tr>
       <tr>
-        <th role="columnheader">Total Gross:</th>
+        <th role="total movie gross money columnheader">Total Gross:</th>
         <td><%= total_gross(@movie) %></td>
       </tr>
     </table>

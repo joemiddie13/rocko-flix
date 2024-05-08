@@ -5,7 +5,7 @@
     </div>    
     <div class="summary">
       <h2 id="movie-title-heading-<%= movie.id %>">
-        <%= link_to movie.title, movie, role: "link" %>
+        <%= link_to movie.title, movie, role: "movie link" %>
       </h2>
       <h3>
         <%= total_gross(movie) %>
@@ -22,5 +22,5 @@
 
 <section class="admin" role="region" aria-labelledby="admin-section-heading">
   <h2 id="admin-section-heading" class="visually-hidden">Admin Section</h2>
-  <%= link_to "Add New Movie", new_movie_path, class: "button", role: "link" %>
+  <%= link_to "Add New Movie", new_movie_path, class: "button", role: "create new movie link" %>
 </section>

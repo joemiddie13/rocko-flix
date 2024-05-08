@@ -1,12 +1,13 @@
 // Responsive Typography
 
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
   html {
     font-size: 14px;
+    font-weight: bold;
   }
 }
 
@@ -16,13 +17,13 @@ h1, h2, h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -59,7 +60,7 @@ $black: #393939;
 $off-white: #ededed;
 $dark-gray: #666;
 $medium-gray: #6c757d;
-$light-gray: #c2c2c2;
+$light-gray: white;
 $blue: red;
 $light-blue: lighten($blue, 40%);
 $orange: #e8890c;
@@ -195,7 +196,7 @@ section.movie {
   .image {
     @extend .col-md-3, .text-center;
     img {
-      width: 100px;
+      width: 200px;
       box-shadow: $box-shadow;
     }
   }
