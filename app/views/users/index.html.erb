@@ -1,8 +1,8 @@
-<h1><%= pluralize(@users.size, "User") %></h1>
-<ul class="users">
+<h1 id="user-list-heading"><%= pluralize(@users.size, "User") %></h1>
+<ul class="users" role="list" aria-labelledby="user-list-heading">
   <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %>
+    <li role="listitem">
+      <%= link_to user.name, user, role: "link" %>
       created
       <%= time_ago_in_words(user.created_at) %> ago
     </li>

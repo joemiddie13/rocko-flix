@@ -1,3 +1,5 @@
-<h1>Add a New Movie</h1>
+<h1 id="add-movie-heading">Add a New Movie</h1>
 
-<%= render "form", movie: @movie %>
+<div role="form" aria-labelledby="add-movie-heading">
+  <%= render "form", movie: @movie %>
+</div>

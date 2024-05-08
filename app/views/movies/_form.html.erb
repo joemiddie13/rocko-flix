@@ -1,29 +1,29 @@
-<%= form_with(model: movie) do |f| %>
+<%= form_with(model: movie, html: { role: "form" }) do |f| %>
   <%= render "shared/errors", object: movie %>
 
-  <%= f.label :title%>
-  <%= f.text_field :title, autofocus:true %>
+  <%= f.label :title, id: "title-label" %>
+  <%= f.text_field :title, autofocus:true, aria: { labelledby: "title-label" } %>
 
-  <%= f.label :description%>
-  <%= f.text_area :description, rows: 10 %>
+  <%= f.label :description, id: "description-label" %>
+  <%= f.text_area :description, rows: 10, aria: { labelledby: "description-label" } %>
 
-  <%= f.label :rating%>
-  <%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
+  <%= f.label :rating, id: "rating-label" %>
+  <%= f.select :rating, Movie::RATINGS, prompt: "Pick one", aria: { labelledby: "rating-label" } %>
 
-  <%= f.label :released_on%>
-  <%= f.date_select :released_on, {}, {class: "date"}%>
+  <%= f.label :released_on, id: "released_on-label" %>
+  <%= f.date_select :released_on, {}, {class: "date", aria: { labelledby: "released_on-label" }} %>
 
-  <%= f.label :director%>
-  <%= f.text_field :director%>
+  <%= f.label :director, id: "director-label" %>
+  <%= f.text_field :director, aria: { labelledby: "director-label" } %>
 
-  <%= f.label :duration%>
-  <%= f.text_field :duration%>
+  <%= f.label :duration, id: "duration-label" %>
+  <%= f.text_field :duration, aria: { labelledby: "duration-label" } %>
   
-  <%= f.label :total_gross%>
-  <%= f.number_field :total_gross%>
+  <%= f.label :total_gross, id: "total_gross-label" %>
+  <%= f.number_field :total_gross, aria: { labelledby: "total_gross-label" } %>
 
-  <%= f.label :image_file_name%>
-  <%= f.text_field :image_file_name%>
+  <%= f.label :image_file_name, id: "image_file_name-label" %>
+  <%= f.text_field :image_file_name, aria: { labelledby: "image_file_name-label" } %>
 
   <%= f.submit%>
 <% end %>

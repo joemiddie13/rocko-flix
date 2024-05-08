@@ -1,28 +1,28 @@
-<header>
-  <nav>
-    <%= link_to image_tag("rocko_flix_logo.png", width: "60") %>
-    <ul class="left">
-      <li>
-        <%= link_to("All Movies", movies_path) %>        
+<header role="banner">
+  <nav role="navigation">
+    <%= link_to image_tag("rocko_flix_logo.png", width: "60", alt: "Rocko Flix Logo"), root_path, role: "link" %>
+    <ul class="left" role="menu">
+      <li role="none">
+        <%= link_to("All Movies", movies_path, role: "menuitem") %>        
       </li>
     </ul>
-    <ul class="right">
+    <ul class="right" role="menu">
       <% if current_user %>
-        <li>
-          <%= link_to current_user.name, current_user %>
+        <li role="username">
+          <%= link_to current_user.name, current_user, role: "menuitem" %>
         </li>
-        <li>
-          <%= link_to "Account Settings", edit_user_path(current_user)%>
+        <li role="Account Settings">
+          <%= link_to "Account Settings", edit_user_path(current_user), role: "menuitem" %>
         </li>
-        <li>
-          <%= link_to "Sign Out", session_path, data: { turbo_method: :delete }, class: "button" %>
+        <li role="Sign Out">
+          <%= link_to "Sign Out", session_path, data: { turbo_method: :delete }, class: "button", role: "menuitem" %>
         </li>
       <% else %>
-        <li>
-          <%= link_to "Sign In", signin_path, class: "button" %>
+        <li role="Sign In">
+          <%= link_to "Sign In", signin_path, class: "button", role: "menuitem" %>
         </li>
-        <li>
-          <%= link_to "Sign Up", signup_path, class: "button" %>
+        <li role="Sign Up">
+          <%= link_to "Sign Up", signup_path, class: "button", role: "menuitem" %>
         </li>
       <% end %>
     </ul>

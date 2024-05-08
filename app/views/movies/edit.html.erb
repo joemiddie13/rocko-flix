@@ -1,3 +1,5 @@
-<h1>Editing, <%= @movie.title %></h1>
+<h1 id="edit-movie-heading">Editing, <%= @movie.title %></h1>
 
-<%= render "form", movie: @movie %>
+<div role="form" aria-labelledby="edit-movie-heading">
+  <%= render "form", movie: @movie %>
+</div>

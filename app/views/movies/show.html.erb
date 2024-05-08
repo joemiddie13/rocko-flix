@@ -1,4 +1,4 @@
-<section class="movie-details">
+<section class="movie-details" role="region" aria-labelledby="movie-title-heading">
   
   <div class="image">
     <%= image_tag @movie.image_file_name %>
@@ -9,24 +9,24 @@
     <h2>
       <%= year_of(@movie) %> &bull; <%= @movie.rating %>
     </h2>
-    <div class="reviews">
+    <div class="reviews" role="region" aria-labelledby="reviews-heading">
       <%= average_stars(@movie) %>
       <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
     </div>
     <p>
       <%= @movie.description %>
     </p>
-    <table>
-      <tr>
-        <th>Director:</th>
-        <td><%= @movie.director %></td>
+    <table role="table">
+      <tr role="row">
+        <th role="columnheader">Director:</th>
+        <td role="cell"><%= @movie.director %></td>
       </tr>
        <tr>
-        <th>Duration:</th>
+        <th role="columnheader">Duration:</th>
         <td><%= @movie.duration %></td>
       </tr>
       <tr>
-        <th>Total Gross:</th>
+        <th role="columnheader">Total Gross:</th>
         <td><%= total_gross(@movie) %></td>
       </tr>
     </table>

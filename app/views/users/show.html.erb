@@ -1,7 +1,7 @@
-<section class="user">
-  <h1><%= @user.name %></h1>
-  <h2><%= mail_to(@user.email) %></h2>
-  <h3>Member Since</h3>
+<section class="user" role="region" aria-labelledby="user-name-heading">
+  <h1 id="user-name-heading"><%= @user.name %></h1>
+  <h2 id="user-email-heading" role="heading" aria-level="2"><%= mail_to(@user.email) %></h2>
+  <h3 id="member-since-heading" role="heading" aria-level="3">Member Since</h3>
   <p>
   <%= @user.created_at.strftime("%B %Y") %>
   </p>

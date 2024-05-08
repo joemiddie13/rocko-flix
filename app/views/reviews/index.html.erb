@@ -1,8 +1,8 @@
-<h1> Reviews for <%= link_to @movie.title, @movie %></h1>
+<h1 id="reviews-heading">Reviews for <%= link_to @movie.title, @movie, role: "link" %></h1>
 
-<ul class="reviews">
+<ul class="reviews" role="list" aria-labelledby="reviews-heading">
   <% @reviews.each do |review| %>
-    <li>
+    <li role="listitem">
       <%= render "shared/stars", percent: review.stars_as_percent %>
       <p>
         <%= review.name %>
